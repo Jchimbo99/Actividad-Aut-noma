@@ -3,9 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document Object Model (DOM)</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para la página */
+        body {
+            padding-top: 50px;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .section-header {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Trabajo colaborativo</h2>
+
+    <!-- Header -->
+    <header>
+        <h1>Document Object Model (DOM)</h1>
+        <p>Una guía sobre las características, objetivos y funcionalidades del DOM</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">DOM Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#que-es">¿Qué es el DOM?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#caracteristicas">Características</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#objetivos">Objetivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ejemplos">Ejemplos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recorrido">Recorrido del Árbol DOM</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- ¿Qué es el DOM? -->
+        <section id="que-es" class="section-content">
+            <h2 class="section-header">¿Qué es el Document Object Model (DOM)?</h2>
+            <p>El <strong>Document Object Model (DOM)</strong> es una interfaz de programación para documentos HTML y XML. Representa la estructura del documento como un árbol de nodos, donde cada nodo es un objeto que representa una parte del contenido de la página web.</p>
+            <p>El DOM permite que los desarrolladores manipulen el contenido de una página web, lo que lo convierte en una herramienta esencial para crear sitios dinámicos e interactivos.</p>
+        </section>
+
+        <!-- Características del DOM -->
+        <section id="caracteristicas" class="section-content">
+            <h2 class="section-header">Características del DOM</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Interfaz de programación:</strong> El DOM permite interactuar con los documentos HTML y XML a través de lenguajes de programación como JavaScript.</li>
+                <li class="list-group-item"><strong>Estructura en árbol:</strong> El DOM presenta los documentos como un árbol jerárquico de nodos, donde cada nodo representa un elemento, atributo o texto en el documento.</li>
+                <li class="list-group-item"><strong>Acceso dinámico:</strong> A través de JavaScript, el DOM puede modificar, agregar o eliminar elementos en tiempo real, permitiendo una experiencia dinámica en la página.</li>
+                <li class="list-group-item"><strong>Compatibilidad:</strong> El DOM es compatible con diferentes lenguajes de programación, lo que facilita su integración en cualquier página web moderna.</li>
+                <li class="list-group-item"><strong>Independencia del lenguaje:</strong> El DOM es independiente del lenguaje, lo que significa que puede ser utilizado con cualquier lenguaje que soporte la manipulación de objetos.</li>
+                <li class="list-group-item"><strong>Extensibilidad:</strong> El DOM se puede extender y personalizar para satisfacer las necesidades de aplicaciones web complejas.</li>
+            </ul>
+        </section>
+
+        <!-- Objetivos del DOM -->
+        <section id="objetivos" class="section-content">
+            <h2 class="section-header">Objetivos del DOM</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Manipulación de documentos:</strong> Facilita la interacción con los elementos de la página web, permitiendo cambiar su contenido y estructura.</li>
+                <li class="list-group-item"><strong>Acceso a elementos específicos:</strong> Mediante el DOM, se puede acceder a elementos HTML específicos como imágenes, formularios, tablas y más.</li>
+                <li class="list-group-item"><strong>Interactividad:</strong> Permite la creación de interfaces dinámicas e interactivas, como menús desplegables, validación de formularios y efectos visuales.</li>
+                <li class="list-group-item"><strong>Mejor experiencia de usuario:</strong> Ayuda a mejorar la experiencia del usuario al permitir una actualización en tiempo real de la página web sin necesidad de recargarla.</li>
+                <li class="list-group-item"><strong>Control sobre el estilo:</strong> El DOM también permite modificar el estilo de los elementos en la página, lo que facilita la creación de páginas web personalizadas y visualmente atractivas.</li>
+            </ul>
+        </section>
+
+        <!-- Ejemplos del DOM -->
+        <section id="ejemplos" class="section-content">
+            <h2 class="section-header">Ejemplos del DOM</h2>
+            <p>Veamos algunos ejemplos de cómo se puede interactuar con el DOM utilizando JavaScript:</p>
+            <h3>Acceder al primer nodo hijo de la página:</h3>
+            <pre><code>
+document.body.firstChild;  // Accede al primer nodo hijo del body
+            </code></pre>
+
+            <h3>Modificar el contenido de un elemento:</h3>
+            <pre><code>
+document.getElementById("miElemento").innerHTML = "Nuevo contenido";  // Modifica el contenido de un elemento
+            </code></pre>
+        </section>
+
+        <!-- Recorrido del Árbol DOM -->
+        <section id="recorrido" class="section-content">
+            <h2 class="section-header">Recorrido del Árbol DOM</h2>
+            <p>El DOM permite recorrer el árbol de elementos con las siguientes propiedades:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><code>parentNode</code>: Obtiene el nodo padre de un elemento.</li>
+                <li class="list-group-item"><code>childNodes</code>: Obtiene todos los nodos hijos de un elemento.</li>
+                <li class="list-group-item"><code>firstChild</code>: Accede al primer hijo de un nodo.</li>
+                <li class="list-group-item"><code>lastChild</code>: Accede al último hijo de un nodo.</li>
+                <li class="list-group-item"><code>previousSibling</code>: Obtiene el nodo hermano previo.</li>
+                <li class="list-group-item"><code>nextSibling</code>: Obtiene el nodo hermano siguiente.</li>
+            </ul>
+
+            <h3>Ejemplo de recorrido del árbol DOM:</h3>
+            <pre><code>
+<ul>
+    <li id="miLI">Coffee</li>
+    <li>Tea</li>
+</ul>
+
+document.getElementById("miLI").parentNode.firstChild;  // Accede al primer hijo de ul
+            </code></pre>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Document Object Model Guide | Todos los derechos reservados</p>
+    
+    </footer>
+
+    <!-- Enlace a Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
